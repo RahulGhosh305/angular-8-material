@@ -1,0 +1,15 @@
+<p style="text-align: center">{{ title }}</p>
+<input type="text" [id]="testId" [value]="userName" />
+
+<p [class]="myCSSClass">This paragraph class comes from *myClass* property</p>
+<p [class.blue]="applyCSSClass">This paragraph class does not apply</p>
+
+<p [class.fontBoldClass]="applyFontBoldClass">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, nihil.
+</p>
+<p [style.color]="myColor">Text color is styled using style binding</p>
+
+<p [ngStyle]="applyMultipleStyle()">mPower Social</p>
+
+<input type="text" [(ngModel)]="name" />
+<p>This input field value is {{ name }}</p>

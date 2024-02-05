@@ -1,0 +1,82 @@
+<caption class="HeadingStyle">
+  {{
+    Heading
+  }}
+</caption>
+<table>
+  <tbody>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>First Name</td>
+      <td>{{ firstName }}</td>
+    </tr>
+    <tr>
+      <td>Last Name</td>
+      <td>{{ lastName }}</td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td>{{ gender }}</td>
+    </tr>
+    <tr>
+      <td>Age</td>
+      <td>{{ age }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Structural Directives:</h3>
+<p>ngFor</p>
+<div *ngFor="let name of allNames; index as i">
+  <p>{{ i }} {{ name }}</p>
+</div>
+
+<p>ngSwitch</p>
+<div [ngSwitch]="fruit">
+  <p *ngSwitchCase="'apple'">Show Apple</p>
+  <p *ngSwitchCase="'mango'">Show Mango</p>
+  <p *ngSwitchCase="'orange'">Show Orange</p>
+  <p *ngSwitchDefault>Show Default</p>
+</div>
+
+<h2>ngSwitch directive</h2>
+<ul [ngSwitch]="LogInName">
+  <li *ngSwitchCase="'user'">
+    <p>User is logged in..</p>
+  </li>
+  <li *ngSwitchCase="'admin'">
+    <p>admin is logged in</p>
+  </li>
+  <li *ngSwitchDefault>
+    <p>Please choose login name</p>
+  </li>
+</ul>
+
+<p>ngIF</p>
+<button (click)="applyLightHandler()">Click</button>
+<div *ngIf="isSwitchMode; then lightOn; else lightOff"></div>
+<ng-template #lightOn> Light On</ng-template>
+<ng-template #lightOff> Light Off</ng-template>
+
+<p>ngIfElse example!</p>
+<div *ngIf="isLogIn; else isLogOut">Hello you are logged in</div>
+<ng-template #isLogOut> You're logged out.. </ng-template>
+
+<h3>Pipes</h3>
+<h5>{{ applyPipe | uppercase }}</h5>
+<h5>{{ dob | date : "fullDate" | lowercase }}</h5>
+<h5>{{ dob | date }}</h5>
+<h6>{{ money | currency : "USD" : "symbol" }}</h6>
+<h6>{{ numberPercentage | percent }}</h6>
+
+<div>Seconds changing in Time: {{ timeChange | async }}</div>
+
+<h5>{{ groups }}</h5>
+<h5>{{ groups | slice : 2 }}</h5>
+<h5>{{ groups | slice : 1 : 4 }}</h5>
+<h5>{{ groups | slice : -2 }}</h5>
+<h5>{{ groups | slice : -4 : -2 }}</h5>
+<h5>Create custom Pipe : {{ digit | digitcount }}</h5>
