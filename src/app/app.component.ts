@@ -6,11 +6,14 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  title = "Expense Manager";
+  title: string = "Expense Manager";
+  userText: string = "";
 
-  public parentdata = "Pass Parent Data to Child Data";
-  public anotherDataPass = "Hello Child I am your Parent Data";
-  childData = "";
+  public parentdata: string = "Pass Parent Data to Child Data";
+  public anotherDataPass: string = "Hello Child I am your Parent Data";
+
+  // Get Data form Child Component
+  childData: string = "";
   handleChildData(dataFromChild: any) {
     this.childData = dataFromChild;
   }

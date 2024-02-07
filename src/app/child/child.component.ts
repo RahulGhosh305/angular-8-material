@@ -13,9 +13,7 @@ export class ChildComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
-
-  sendDataToParent() {
+  ngOnInit() {
     const dataToSend = "Data from child component";
     this.childDataEvent.emit(dataToSend);
   }

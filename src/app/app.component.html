@@ -46,4 +46,9 @@
   ></app-child>
 
   <h4>{{ childData }}</h4>
+
+  <input type="text" [(ngModel)]="userText" />
+
+  <p>Parent App Html Page : {{ userText }}</p>
+  <app-onchanges [userTextFromApp]="userText"></app-onchanges>
 </div>
