@@ -1,10 +1,13 @@
 import { Component, OnInit } from "@angular/core";
+import { DebugService } from "../debug.service";
 import { ExpenseEntry } from "../expense-entry";
 
 @Component({
   selector: "app-expense-entry-list",
   templateUrl: "./expense-entry-list.component.html",
   styleUrls: ["./expense-entry-list.component.css"],
+  providers: [DebugService],
+  // viewProviders: [DebugService],
 })
 export class ExpenseEntryListComponent implements OnInit {
   getExpenseEntries(): ExpenseEntry[] {
@@ -129,9 +132,10 @@ export class ExpenseEntryListComponent implements OnInit {
   }
   title: string;
   expenseEntries: ExpenseEntry[];
-  constructor() {}
+  constructor(private debugService: DebugService) {}
   ngOnInit() {
     this.title = "Expense Entry List";
     this.expenseEntries = this.getExpenseEntries();
+    this.debugService.info("Expense Entry List component initialized");
   }
 }
