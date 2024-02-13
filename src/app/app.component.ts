@@ -9,7 +9,7 @@ import { filter, map } from "rxjs/operators";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
-  title: string = "Expense Manager";
+  title: string = "Hisab";
   userText: string = "";
 
   title2 = "Reactive programming concept";
